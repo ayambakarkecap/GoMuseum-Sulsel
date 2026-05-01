@@ -19,18 +19,14 @@ public class ListMuseumActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_museum);
 
         rvMuseum = findViewById(R.id.rvMuseum);
-        // Mengatur agar daftarnya memanjang ke bawah (vertikal)
         rvMuseum.setLayoutManager(new LinearLayoutManager(this));
 
-        // Membuat data museum sementara (Dummy Data)
         listMuseum = new ArrayList<>();
-        listMuseum.add(new Museum("Museum Balla Lompoa", "Kab. Gowa", R.mipmap.ic_launcher));
-        listMuseum.add(new Museum("Museum La Galigo", "Kota Makassar", R.mipmap.ic_launcher));
-        listMuseum.add(new Museum("Museum Karaeng Pattingalloang", "Kota Makassar", R.mipmap.ic_launcher));
-        listMuseum.add(new Museum("Museum Kota Makassar", "Kota Makassar", R.mipmap.ic_launcher));
-        listMuseum.add(new Museum("Museum Batara Guru", "Kota Palopo", R.mipmap.ic_launcher));
+        // Menambahkan deskripsi pada setiap museum
+        listMuseum.add(new Museum("Museum Balla Lompoa", "Kab. Gowa", R.mipmap.ic_launcher, "Museum Balla Lompoa adalah rekonstruksi dari istana Kerajaan Gowa. Menyimpan berbagai koleksi benda bersejarah peninggalan Kerajaan Gowa."));
+        listMuseum.add(new Museum("Museum La Galigo", "Kota Makassar", R.mipmap.ic_launcher, "Terletak di dalam kompleks Benteng Fort Rotterdam. Museum ini memiliki ribuan koleksi yang berkaitan dengan sejarah dan kebudayaan Sulawesi Selatan."));
+        listMuseum.add(new Museum("Museum Karaeng Pattingalloang", "Kota Makassar", R.mipmap.ic_launcher, "Museum yang didedikasikan untuk mengenang kecerdasan Karaeng Pattingalloang, seorang mangkubumi Kerajaan Gowa-Tallo yang sangat mencintai ilmu pengetahuan."));
 
-        // Memasang adapter ke RecyclerView
         adapter = new MuseumAdapter(listMuseum);
         rvMuseum.setAdapter(adapter);
     }

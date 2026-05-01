@@ -1,5 +1,6 @@
 package com.kelompok2.gomeseumsulsel;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,18 +21,27 @@ public class MuseumAdapter extends RecyclerView.Adapter<MuseumAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Mengambil cetakan item_museum.xml
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_museum, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        // Mengisi data ke cetakan sesuai posisinya
         Museum museum = listMuseum.get(position);
         holder.tvNamaMuseum.setText(museum.getNama());
         holder.tvLokasiMuseum.setText(museum.getLokasi());
         holder.imgMuseum.setImageResource(museum.getGambar());
+
+        // Membuat seluruh kotak bisa diklik
+        holder.itemView.setOnClickListener(v -> {
+            // Membuka DetailMuseumActivity dan membawa data
+            Intent intent = new Intent(v.getContext(), DetailMuseumActivity.class);
+            intent.putExtra("EXTRA_NAMA", museum.getNama());
+            intent.putExtra("EXTRA_LOKASI", museum.getLokasi());
+            intent.putExtra("EXTRA_DESKRIPSI", museum.getDeskripsi());
+            intent.putExtra("EXTRA_GAMBAR", museum.getGambar());
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
