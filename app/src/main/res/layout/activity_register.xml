@@ -27,7 +27,19 @@
 
             <EditText android:id="@+id/etUsernameReg" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/line_bottom_black" android:hint="Username" android:textColorHint="@color/black" android:textColor="@color/black" android:textSize="14sp" android:textStyle="bold" android:paddingBottom="8dp" android:layout_marginBottom="20dp"/>
 
-            <EditText android:id="@+id/etNamaReg" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/line_bottom_black" android:hint="Nama" android:textColorHint="@color/black" android:textColor="@color/black" android:textSize="14sp" android:textStyle="bold" android:paddingBottom="8dp" android:layout_marginBottom="20dp"/>
+            <EditText
+                android:id="@+id/etNamaReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/line_bottom_black"
+                android:hint="Nama"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp"
+                android:layout_marginBottom="20dp"/>
 
             <EditText android:id="@+id/etPasswordReg" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/line_bottom_black" android:hint="Password" android:inputType="textPassword" android:textColorHint="@color/black" android:textColor="@color/black" android:textSize="14sp" android:textStyle="bold" android:paddingBottom="8dp"/>
         </LinearLayout>
