@@ -71,6 +71,13 @@
                 android:textColor="#444444"
                 android:textSize="14sp"
                 android:lineSpacingExtra="4dp" />
+            <Button
+                android:id="@+id/btnMaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lihat Rute di Maps"
+                android:backgroundTint="#004AAD"
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
     </LinearLayout>

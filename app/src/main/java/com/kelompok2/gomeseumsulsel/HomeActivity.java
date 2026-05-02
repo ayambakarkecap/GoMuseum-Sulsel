@@ -2,7 +2,7 @@ package com.kelompok2.gomeseumsulsel;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -12,20 +12,23 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Menemukan tombol dari XML berdasarkan ID
-        Button btnKategoriSejarah = findViewById(R.id.btnKategoriSejarah);
-        Button btnKategoriBudaya = findViewById(R.id.btnKategoriBudaya);
+        // Menghubungkan ID dari XML ke Java
+        TextView btnSejarah = findViewById(R.id.btnMasukSejarah);
+        TextView btnBudaya = findViewById(R.id.btnMasukBudaya);
+        TextView btnKerajaan = findViewById(R.id.btnMasukKerajaan);
+        TextView btnPerjuangan = findViewById(R.id.btnMasukPerjuangan);
 
-        // Perintah saat tombol Museum Sejarah diklik
-        btnKategoriSejarah.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, ListMuseumActivity.class);
-            startActivity(intent);
-        });
+        // Perintah klik untuk setiap kategori
+        btnSejarah.setOnClickListener(v -> bukaDaftar("Sejarah"));
+        btnBudaya.setOnClickListener(v -> bukaDaftar("Budaya"));
+        btnKerajaan.setOnClickListener(v -> bukaDaftar("Kerajaan"));
+        btnPerjuangan.setOnClickListener(v -> bukaDaftar("Perjuangan"));
+    }
 
-        // Perintah saat tombol Museum Budaya diklik
-        btnKategoriBudaya.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, ListMuseumActivity.class);
-            startActivity(intent);
-        });
+    // Metode bantuan agar kode tidak berulang-ulang
+    private void bukaDaftar(String kategori) {
+        Intent intent = new Intent(HomeActivity.this, ListMuseumActivity.class);
+        intent.putExtra("KATEGORI_TERPILIH", kategori);
+        startActivity(intent);
     }
 }

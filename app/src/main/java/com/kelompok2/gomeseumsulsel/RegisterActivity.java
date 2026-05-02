@@ -23,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
         EditText etUsername = findViewById(R.id.etUsernameReg);
         EditText etNama = findViewById(R.id.etNamaReg);
         EditText etPassword = findViewById(R.id.etPasswordReg);
-        Button btnDaftar = findViewById(R.id.btnDaftar);
+        Button btnDaftar = findViewById(R.id.btnRegister);
         TextView tvGoToLogin = findViewById(R.id.tvGoToLogin);
 
         // Fungsi saat tombol Daftar ditekan

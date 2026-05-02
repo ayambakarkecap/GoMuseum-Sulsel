@@ -7,9 +7,9 @@
     android:background="@android:color/white">
 
     <!-- Tempat Logo (Ganti @drawable/logo dengan file logomu nanti) -->
-    <ImageView android:id="@+id/imgLogo" android:layout_width="140dp" android:layout_height="140dp" android:layout_marginTop="64dp" android:src="@mipmap/ic_launcher" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView android:id="@+id/imgLogo" android:layout_width="140dp" android:layout_height="140dp" android:layout_marginTop="64dp" android:src="@drawable/logo" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView android:id="@+id/tvLoginTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="LOG IN" android:textColor="@color/blue_primary" android:textSize="24sp" android:textStyle="bold" android:fontFamily="serif" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgLogo"/>
+    <TextView android:id="@+id/tvLoginTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="LOGIN" android:textColor="@color/blue_primary" android:textSize="24sp" android:textStyle="bold" android:fontFamily="serif" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgLogo"/>
 
     <!-- Kotak Form Coklat -->
     <androidx.cardview.widget.CardView
@@ -34,12 +34,28 @@
     </androidx.cardview.widget.CardView>
 
     <!-- Tombol Log In -->
-    <Button android:id="@+id/btnLogin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="32dp" android:backgroundTint="@android:color/white" android:elevation="4dp" android:paddingHorizontal="32dp" android:text="Log In" android:textColor="@color/black" android:textStyle="bold" app:cornerRadius="20dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/cardForm"/>
+    <!-- Tombol Log In -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@android:color/white"
+        android:text="Login"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:elevation="8dp"
+        app:cornerRadius="30dp"
+        app:strokeColor="#DDDDDD"
+        app:strokeWidth="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardForm"/>
 
     <!-- Teks Link Daftar -->
     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="horizontal" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/btnLogin">
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BELUM MEMILIKI AKUN " android:textColor="@color/black" android:textSize="12sp" android:textStyle="bold"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BELUM MEMILIKI AKUN? " android:textColor="@color/black" android:textSize="12sp" android:textStyle="bold"/>
 
         <TextView android:id="@+id/tvGoToRegister" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DAFTAR" android:textColor="@color/black" android:textSize="12sp" android:textStyle="bold"/>
     </LinearLayout>

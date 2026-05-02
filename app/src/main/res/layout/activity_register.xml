@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <ImageView android:id="@+id/imgLogoReg" android:layout_width="140dp" android:layout_height="140dp" android:layout_marginTop="64dp" android:src="@mipmap/ic_launcher" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView android:id="@+id/imgLogoReg" android:layout_width="140dp" android:layout_height="140dp" android:layout_marginTop="64dp" android:src="@drawable/logo" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView android:id="@+id/tvRegTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="DAFTAR" android:textColor="@color/blue_primary" android:textSize="24sp" android:textStyle="bold" android:fontFamily="serif" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgLogoReg"/>
 
@@ -45,13 +45,49 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <Button android:id="@+id/btnDaftar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="32dp" android:backgroundTint="@android:color/white" android:elevation="4dp" android:paddingHorizontal="32dp" android:text="Daftar" android:textColor="@color/black" android:textStyle="bold" app:cornerRadius="20dp" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/cardFormReg"/>
+    <!-- Tombol Daftar yang sudah berbentuk Kapsul -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@android:color/white"
+        android:text="Daftar"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:cornerRadius="30dp"
+        app:strokeColor="#DDDDDD"
+        app:strokeWidth="1dp"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardFormReg"/>
 
-    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:orientation="horizontal" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/btnDaftar">
+    <!-- Teks Link ke Login -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister"> <!-- ID diganti ke btnRegister agar tidak merah -->
 
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BELUM MEMILIKI AKUN " android:textColor="@color/black" android:textSize="12sp" android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUDAH MEMILIKI AKUN? "
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
 
-        <TextView android:id="@+id/tvGoToLogin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LOG IN" android:textColor="@color/black" android:textSize="12sp" android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tvGoToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

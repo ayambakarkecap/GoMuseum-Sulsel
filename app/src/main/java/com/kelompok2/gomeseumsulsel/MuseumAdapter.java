@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class MuseumAdapter extends RecyclerView.Adapter<MuseumAdapter.ViewHolder> {
@@ -28,19 +31,27 @@ public class MuseumAdapter extends RecyclerView.Adapter<MuseumAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Museum museum = listMuseum.get(position);
+
+        // Sesuaikan nama method ini dengan yang ada di Museum.java kamu
         holder.tvNamaMuseum.setText(museum.getNama());
         holder.tvLokasiMuseum.setText(museum.getLokasi());
-        holder.imgMuseum.setImageResource(museum.getGambar());
+
+        // Perbaikan Glide dengan context yang benar
+        Glide.with(holder.itemView.getContext())
+                .load(museum.getGambar())
+                .placeholder(R.drawable.logo)
+                .error(R.drawable.logo)
+                .centerCrop()
+                .into(holder.imgMuseum);
 
         // Membuat seluruh kotak bisa diklik
         holder.itemView.setOnClickListener(v -> {
-            // Membuka DetailMuseumActivity dan membawa data
-            Intent intent = new Intent(v.getContext(), DetailMuseumActivity.class);
+            Intent intent = new Intent(holder.itemView.getContext(), DetailMuseumActivity.class);
             intent.putExtra("EXTRA_NAMA", museum.getNama());
             intent.putExtra("EXTRA_LOKASI", museum.getLokasi());
             intent.putExtra("EXTRA_DESKRIPSI", museum.getDeskripsi());
             intent.putExtra("EXTRA_GAMBAR", museum.getGambar());
-            v.getContext().startActivity(intent);
+            holder.itemView.getContext().startActivity(intent);
         });
     }
 
