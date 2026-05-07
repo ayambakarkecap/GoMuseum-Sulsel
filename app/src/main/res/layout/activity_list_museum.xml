@@ -3,27 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white">
+    android:background="#F5F5F5">
 
-    <!-- Header / Judul Kategori -->
-    <TextView
-        android:id="@+id/tvKategoriTitle"
+    <EditText
+        android:id="@+id/etSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Daftar Museum"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:background="@color/blue_primary"
-        android:padding="16dp"
-        android:textAlignment="center"/>
+        android:hint="Cari Museum..."
+        android:background="@drawable/bg_search_rounded"
+        android:padding="12dp"
+        android:layout_margin="16dp" />
 
-    <!-- Tempat Daftar Museum akan Muncul -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMuseum"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp"
-        android:clipToPadding="false"/>
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
 
 </LinearLayout>
